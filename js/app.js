@@ -58,18 +58,61 @@ let Myfunc = (movie) => {
       alert(element.summary);
     });
 
+    // Remove
+
+    let removeList = document.createElement(`div`);
+    removeList.style.border = "1px solid #1a1a1b1c";
+    removeList.style.borderRadius = "5px";
+    movies__names.append(removeList);
+
+    let removeHead = document.createElement(`h3`);
+    removeHead.textContent = element.title;
+    removeHead.style.fontSize = "18px";
+    removeHead.style.textAlign = "left";
+    removeHead.style.marginLeft = "19px";
+    removeHead.style.marginTop = "5px";
+    removeList.append(removeHead);
+
+    let remove = document.createElement(`button`);
+    remove.textContent = "Remove";
+    remove.className = "remove";
+    removeList.append(remove);
+
+    remove.addEventListener("click", () => {
+      removeList.remove(removeHead);
+    });
+
     // Bookmark
 
     let bookmark = document.createElement(`a`);
     bookmark.classList.add(`item__btn2`);
-    bookmark.setAttribute("href", element.youtubeId);
     bookmark.textContent = "Bookmark";
     bookmark.style.border = "2px solid #28a745";
     bookmark.style.color = "#28a745";
     item.append(bookmark);
 
     bookmark.addEventListener("click", () => {
-      bookmark.value = element.youtubeId;
+      let removeList = document.createElement(`div`);
+      removeList.style.border = "1px solid #1a1a1b1c";
+      removeList.style.borderRadius = "5px";
+      movies__names.append(removeList);
+
+      let removeHead = document.createElement(`h3`);
+      removeHead.textContent = element.title;
+      removeHead.style.fontSize = "18px";
+      removeHead.style.textAlign = "left";
+      removeHead.style.marginLeft = "19px";
+      removeHead.style.marginTop = "5px";
+      removeList.append(removeHead);
+
+      let remove = document.createElement(`button`);
+      remove.textContent = "Remove";
+      remove.className = "remove";
+      removeList.append(remove);
+
+      remove.addEventListener("click", () => {
+        removeList.remove(`removeHead`);
+      });
     });
 
     cards.appendChild(item);
